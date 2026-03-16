@@ -23,8 +23,12 @@ h1 {
 }
 
 #yes, #no {
-  font-size: 1.2rem;
-  padding: 12px 30px;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+}
+
+#no {
+    margin-left: 20px;
 }
 
 #message {
