@@ -1,25 +1,39 @@
-function load(){
-	document.getElementById('yes').addEventListener('mouseover', yes);
-	document.getElementById('no').addEventListener('click', no);
-	document.body.style.backgroundColor = '#F0FFFF';
+function load() {
+  document.getElementById('yes').addEventListener('click', yes);
+  document.getElementById('no').addEventListener('mouseover', no);
+  document.getElementById('no').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    no();
+  });
 }
 
-function no(){
-	let windowH = Math.floor(window.innerHeight*0.8);
-	let windowW = Math.floor(window.innerWidth*0.8);
+function no() {
+  const btn = document.getElementById('no');
+  btn.style.position = 'fixed';
 
-	let top = Math.floor(Math.random() * (windowH)) + 1;
-	let left = Math.floor(Math.random() * (windowW)) + 1;
+  const isMobile = window.innerWidth < 768;
+  const factor = isMobile ? 0.95 : 0.85;
 
-	document.getElementById('yes').style.marginTop = top + 'px';
-	document.getElementById('yes').style.marginLeft = left + 'px';
+  const windowH = window.innerHeight * factor;
+  const windowW = window.innerWidth * factor;
+
+  const top = Math.floor(Math.random() * windowH);
+  const left = Math.floor(Math.random() * windowW);
+
+  btn.style.top = top + 'px';
+  btn.style.left = left + 'px';
 }
 
-function yes(){
-	document.getElementById('container').innerHTML = "";
-	container = "";
-	container += "<p style='text-align:center'>";
-	container += "Annie-san❤️, lo prometido es deuda🌹🍺";
-	container += "</p>";
-	document.getElementById('container').innerHTML = container;
+function yes() {
+  document.getElementById('container').innerHTML = `
+    <div id="message">
+      Annie-san ❤️<br>
+      lo prometido es deuda :)<br>
+      🌹🍺
+    </div>
+  `;
+  document.body.style.backgroundImage = "url('./slime.jpg')";
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundColor = "";
 }
