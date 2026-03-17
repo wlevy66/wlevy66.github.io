@@ -28,12 +28,13 @@ function yes() {
   document.getElementById('container').innerHTML = `
     <div id="message">
       Annie-san ❤️<br>
-      lo prometido es deuda :)<br>
+      Lo sabía, lo prometido es deuda :)<br>
       🌹🍺
     </div>
+    <div id="cats">
+      <img src="./you.webp">
+      <img src="./me.webp">
+      <img src="./us.webp">
+    </div>
   `;
-  document.body.style.backgroundImage = "url('./slime.jpg')";
-  document.body.style.backgroundSize = "cover";
-  document.body.style.backgroundPosition = "center";
-  document.body.style.backgroundColor = "";
 }
