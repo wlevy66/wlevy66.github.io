@@ -30,7 +30,7 @@ function no() {
 function yes() {
   document.getElementById('container').innerHTML = `
     <div id="message">
-      Annie-san ❤️<br>
+      Annniiie-san ❤️<br>
       Lo sabía, lo prometido es deuda :)<br>
       🌹🍺
     </div>
